@@ -39,8 +39,11 @@ class GridViewBuilderWidget extends StatelessWidget {
                   child: SvgPicture.network(subjects[index].image.toString()),
                 ),
                 Text(
-                  subjects[index].name.toString(),
+                  homePro.indexListTile == 0
+                      ? subjects[index].name.toString()
+                      : subjects[index].hindi.toString(),
                   style: const TextStyle(
+                    overflow: TextOverflow.ellipsis,
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),

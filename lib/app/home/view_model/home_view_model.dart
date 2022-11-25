@@ -21,4 +21,10 @@ class HomeProvider extends ChangeNotifier {
     notifyListeners();
     log(classList.toString());
   }
+
+  int? indexListTile;
+  lanuguageSelection(index) {
+    indexListTile = index;
+    notifyListeners();
+  }
 }

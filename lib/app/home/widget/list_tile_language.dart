@@ -6,10 +6,14 @@ class ListTileLanguage extends StatelessWidget {
     super.key,
     required this.data,
     required this.backgroundColor,
+    required this.title,
+    required this.onTap,
   });
 
   final String data;
   final Color backgroundColor;
+  final String title;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +21,7 @@ class ListTileLanguage extends StatelessWidget {
       child: SizedBox(
         height: 70,
         child: ListTile(
-          onTap: () {},
+          onTap: onTap,
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
           shape: RoundedRectangleBorder(
@@ -29,9 +33,9 @@ class ListTileLanguage extends StatelessWidget {
           leading: CircleAvatar(
             radius: 20,
             backgroundColor: backgroundColor,
-            child: const Text(
-              "A",
-              style: TextStyle(
+            child: Text(
+              title,
+              style: const TextStyle(
                 color: AppColors.kWhiteColor,
                 fontSize: 20,
                 fontWeight: FontWeight.w900,
