@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "149149473044",
+    "project_id": "idream-assessment",
+    "storage_bucket": "idream-assessment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:149149473044:android:c6f76797c70cbab5f8ca01",
+        "android_client_info": {
+          "package_name": "com.example.idream_assessment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "149149473044-it4e8mtahg6o1rcbgbglu6kf0etsga29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5AVN67ErDns-4KZW1YTmKvzALDy8wYOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "149149473044-it4e8mtahg6o1rcbgbglu6kf0etsga29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

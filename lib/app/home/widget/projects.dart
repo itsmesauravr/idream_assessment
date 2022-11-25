@@ -3,18 +3,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:idream_assessment/app/utils/app_colors.dart';
 import 'package:idream_assessment/app/utils/app_size.dart';
 
-class BooksSection extends StatelessWidget {
-  const BooksSection({
+class ProjectSection extends StatelessWidget {
+  const ProjectSection({
     super.key,
     required this.assetName,
     required this.data,
-    this.subTitle,
   });
 
   final String assetName;
   final String data;
-  final String? subTitle;
-
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -52,17 +49,6 @@ class BooksSection extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              AppSize.kHeight2,
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 2),
-                child: Text(
-                  subTitle ?? '',
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: AppColors.kCardBroderColor,
                   ),
                 ),
               ),

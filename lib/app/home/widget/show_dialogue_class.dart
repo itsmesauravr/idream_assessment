@@ -1,12 +1,17 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:idream_assessment/app/home/view_model/home_view_model.dart';
 import 'package:idream_assessment/app/home/widget/text_sections.dart';
 import 'package:idream_assessment/app/utils/app_colors.dart';
 import 'package:idream_assessment/app/utils/app_size.dart';
+import 'package:provider/provider.dart';
 
 class ShowBox {
   static void showSimpleDialog(BuildContext context) => showDialog(
         context: context,
         builder: (context) {
+          final homePro = Provider.of<HomeProvider>(context);
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 200, horizontal: 8),
             child: Card(
@@ -50,9 +55,16 @@ class ShowBox {
                             ),
                           ),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              int selectedIndex = index;
+                              homePro.classTextDision(selectedIndex);
+                              log(selectedIndex.toString());
+                              Navigator.of(context).pop();
+                            },
                             child: Text(
-                              "${index + 1}th",
+                              homePro.classDivision[index] >= 2
+                                  ? "${homePro.classDivision[index]}th"
+                                  : "${homePro.classDivision[index]}st",
                               style: TextStyle(
                                 color: AppColors.kCancelButtonColor,
                               ),
@@ -85,7 +97,8 @@ class ShowBox {
                       ),
                     ),
                   ),
-                  AppSize.kHeight15,
+                  AppSize.kHeight2,
+                  AppSize.kHeight5,
                 ],
               ),
             ),
