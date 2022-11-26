@@ -13,7 +13,7 @@ class ShowBox {
         builder: (context) {
           final homePro = Provider.of<HomeProvider>(context);
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 200, horizontal: 8),
+            padding: const EdgeInsets.symmetric(vertical: 190, horizontal: 8),
             child: Card(
               elevation: 0,
               shape: RoundedRectangleBorder(
@@ -30,6 +30,7 @@ class ShowBox {
                   ),
                   Expanded(
                     child: GridView.builder(
+                      physics: const BouncingScrollPhysics(),
                       padding: const EdgeInsets.symmetric(
                         horizontal: 32,
                         vertical: 8,
@@ -62,9 +63,11 @@ class ShowBox {
                               Navigator.of(context).pop();
                             },
                             child: Text(
-                              homePro.classDivision[index] >= 2
+                              homePro.classDivision[index] > 2
                                   ? "${homePro.classDivision[index]}th"
-                                  : "${homePro.classDivision[index]}st",
+                                  : homePro.classDivision[index] == 2
+                                      ? "${homePro.classDivision[index]}nd"
+                                      : "${homePro.classDivision[index]}st",
                               style: TextStyle(
                                 color: AppColors.kCancelButtonColor,
                               ),
@@ -97,8 +100,7 @@ class ShowBox {
                       ),
                     ),
                   ),
-                  AppSize.kHeight2,
-                  AppSize.kHeight5,
+                  AppSize.kHeight15,
                 ],
               ),
             ),

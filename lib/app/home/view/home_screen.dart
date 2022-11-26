@@ -161,12 +161,14 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     bottomNavigationBar: BottomNavigationBar(
+                      backgroundColor: AppColors.kWhiteColor,
                       items: const [
                         BottomNavigationBarItem(
-                            icon: Icon(Icons.home), label: "Notes"),
+                            icon: Icon(Icons.home), label: "Home"),
                         BottomNavigationBarItem(
-                            icon: Icon(Icons.auto_graph_sharp),
-                            label: "My Reports"),
+                          icon: Icon(Icons.bar_chart_outlined),
+                          label: "My Reports",
+                        ),
                       ],
                     ),
                   );

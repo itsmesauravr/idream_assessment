@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:idream_assessment/app/home/view_model/home_view_model.dart';
 import 'package:idream_assessment/app/utils/app_colors.dart';
+import 'package:provider/provider.dart';
 
 class ListTileLanguage extends StatelessWidget {
   const ListTileLanguage({
@@ -8,14 +10,17 @@ class ListTileLanguage extends StatelessWidget {
     required this.backgroundColor,
     required this.title,
     required this.onTap,
+    required this.icon,
   });
 
   final String data;
   final Color backgroundColor;
   final String title;
   final void Function()? onTap;
+  final IconData? icon;
   @override
   Widget build(BuildContext context) {
+    final homePro = Provider.of<HomeProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
@@ -45,8 +50,8 @@ class ListTileLanguage extends StatelessWidget {
           title: Text(
             data,
           ),
-          trailing: const Icon(
-            Icons.check_circle_outline,
+          trailing: Icon(
+            icon,
             color: AppColors.kGreenColor,
           ),
         ),

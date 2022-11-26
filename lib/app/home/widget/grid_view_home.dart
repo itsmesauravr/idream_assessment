@@ -28,7 +28,7 @@ class GridViewBuilderWidget extends StatelessWidget {
             crossAxisCount: 4,
             crossAxisSpacing: 15,
             childAspectRatio: MediaQuery.of(context).size.width /
-                (MediaQuery.of(context).size.height / 1.15),
+                (MediaQuery.of(context).size.height / 1),
           ),
           itemBuilder: (context, index) {
             return Column(

@@ -17,6 +17,7 @@ class TextSections extends StatelessWidget {
       child: Text(
         data,
         style: TextStyle(
+          overflow: TextOverflow.ellipsis,
           fontWeight: FontWeight.bold,
           fontSize: 18,
           color: color ?? AppColors.kBlackColor,
